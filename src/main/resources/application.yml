@@ -1,0 +1,32 @@
+logging:
+    level:
+      root: info
+
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    show-sql: true
+
+simulate-mssql:
+  datasource:
+    jdbcUrl: jdbc:h2:mem:mssql_db;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+    username: mssql
+    password: mssql
+    driverClassName: org.h2.Driver
+    test-on-borrow: true
+    test-while-idle: true
+    validation-query: select 1;
+    maxActive: 1
+simulate-anothersql:
+  datasource:
+    jdbcUrl: jdbc:h2:mem:another_db;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+    username: another_db
+    password: another_db
+    driverClassName: org.h2.Driver
+    test-on-borrow: true
+    test-while-idle: true
+    validation-query: select 1;
+    maxActive: 1
